@@ -21,6 +21,8 @@ import {
   SiPrisma,
   SiGit,
   SiGithub,
+  SiDocker,
+  SiGithubactions,
   SiPostman,
   SiReactquery,
 } from "react-icons/si";
@@ -40,6 +42,8 @@ const SKILL_ICONS: Record<string, IconType> = {
   "Prisma ORM": SiPrisma,
   Git: SiGit,
   GitHub: SiGithub,
+  Docker: SiDocker,
+  "GitHub Actions": SiGithubactions,
   Postman: SiPostman,
   "TanStack Query": SiReactquery,
   Zustand: TbBrandFramerMotion,
@@ -83,7 +87,7 @@ const SKILL_CATEGORIES = [
   },
   {
     label: "Tools & Testing",
-    items: ["Git", "GitHub", "Postman", "Bruno"],
+    items: ["Git", "GitHub", "Docker", "GitHub Actions", "Postman", "Bruno"],
   },
 ];
 
@@ -92,12 +96,19 @@ const PROJECTS = [
     title: "Multi-Tenant Booking System",
     ongoing: true,
     subtitle: "Enterprise SaaS Platform",
-    stack: ["Node.js", "TypeScript", "Microservices"],
+    stack: [
+      "Node.js",
+      "TypeScript",
+      "Microservices",
+      "Docker",
+      "GitHub Actions",
+    ],
     bullets: [
       "4 independent services: Auth, Booking, Business, Resource",
       "Centralized API Gateway routing all traffic",
       "JWT authentication with Role-Based Access Control",
       "Prisma ORM with connection pooling",
+      "Containerized services with Docker and CI/CD automation using GitHub Actions",
     ],
     github:
       "https://github.com/suyanthapa/Multi-Tenant-booking-Platform---Backend",
@@ -151,7 +162,7 @@ const ARTICLES = [
   {
     title: "The Hidden Performance Cost of Uncoordinated Prisma Clients",
     excerpt:
-      "A deep dive into architecting scalable multi-tenant systems using microservices, API gateways, and tenant isolation patterns.",
+      "How uncoordinated Prisma clients silently kill performance — and how a singleton connection pool fixes it.",
     date: "Jan 7, 2026",
     readTime: "8 min read",
     tags: ["Node.js", "Database Performance", "Connection Pooling", "Prisma"],
@@ -162,7 +173,7 @@ const ARTICLES = [
     title:
       "Decoupling Data: Building Scalable Node.js Backends with the Repository Pattern",
     excerpt:
-      "Best practices for implementing JSON Web Token authentication with Role-Based Access Control in Express.js applications.",
+      "Implementing the Repository Pattern to separate business logic from data access for cleaner and scalable backend architecture.",
     date: "Dec 30, 2025",
     readTime: "5 min read",
     tags: ["Node.js", "Typescript", "Software Architecture"],
@@ -173,7 +184,7 @@ const ARTICLES = [
     title:
       "How I centralized error handling in my Node.js app and (stopped copy pasting res.status.json() everytime)",
     excerpt:
-      "How to implement the repository pattern for clean data access layers using Prisma, TypeScript, and PostgreSQL.",
+      "Simplified backend error management, reduced duplicate code, and improved API consistency with centralized error handling.",
     date: "Nov 4, 2025",
     readTime: "2 min read",
     tags: ["Prisma", "Error Handling", "Clean Architecture"],
@@ -193,7 +204,7 @@ const EDUCATION = [
   },
   {
     school: "Motherland Secondary College",
-    degree: "Management — CGPA 3.30",
+    degree: "Management ",
     period: "2019 — 2021",
     location: "Pokhara",
     description:
@@ -201,7 +212,7 @@ const EDUCATION = [
   },
   {
     school: "Evergreen Secondary Boarding School",
-    degree: "SEE — CGPA 3.25",
+    degree: "SEE ",
     period: "2009 — 2019",
     location: "Pokhara",
     description:
@@ -286,8 +297,6 @@ function useCountUp(end: number, duration = 2000, trigger = false) {
   return count;
 }
 
-
-
 /* ──────────────────────────────────────────────────────────
    COMPONENTS — NAVBAR
    ────────────────────────────────────────────────────────── */
@@ -337,7 +346,7 @@ function Navbar() {
           className="font-mono text-lg tracking-tight text-electric hover:text-emerald transition-colors"
         >
           <span className="text-slate-light">&lt;</span>
-          <span className="font-bold">ST</span>
+          <span className="font-bold">Suyan Thapa</span>
           <span className="text-slate-light"> /&gt;</span>
         </a>
 
@@ -416,7 +425,6 @@ function Navbar() {
               </span>
             </a>
           </div>
-
         </div>
 
         {/* Mobile toggle */}
@@ -1403,6 +1411,8 @@ function Articles() {
                 {/* Link */}
                 <a
                   href={article.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-electric hover:text-emerald transition-colors mt-auto"
                 >
                   Read Article
@@ -1785,9 +1795,9 @@ function Footer() {
               Suyan Thapa
             </h3>
             <p className="text-slate-light text-sm leading-relaxed mb-4">
-              Backend Developer &amp; Microservices Architect specializing in
-              Node.js, TypeScript, and scalable API systems. Passionate about
-              building clean, maintainable software solutions.
+              Backend Developer &amp; specializing in Node.js, TypeScript, and
+              scalable API systems. Passionate about building clean,
+              maintainable software solutions.
             </p>
             <p className="text-slate-light text-sm flex items-center gap-2">
               <svg

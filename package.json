@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-     "deploy": "next build && echo > out/.nojekyll && gh-pages -d out"
+   "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "framer-motion": "^11.15.0",
