@@ -178,7 +178,7 @@ const JUST_FOR_FUN_PROJECTS: Project[] = [
     title: "DOTM license print checker",
     ongoing: false,
     subtitle: "For information purpose only",
-    stack: ["Next.js", "Node.js", "Vercel", "Render"],
+    stack: ["Next.js", "Node.js", "Render", "Vercel"],
     bullets: [
       "Quickly check DOTM license print details using license number",
       "Helps save time instead of searching through thousands of PDF pages",
