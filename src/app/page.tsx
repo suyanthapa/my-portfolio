@@ -97,6 +97,7 @@ type Project = {
   subtitle: string;
   stack: string[];
   bullets: string[];
+  notice?: string;
   github?: string;
   github2?: string;
   live?: string;
@@ -183,6 +184,8 @@ const JUST_FOR_FUN_PROJECTS: Project[] = [
       "Quickly check DOTM license print details using license number",
       "Helps save time instead of searching through thousands of PDF pages",
     ],
+    notice:
+      "Temporarily unavailable due to Render free usage limit. It will work from 1st May.",
     live: "https://dotm-license-checker.vercel.app/",
     gradient: "from-cyan-600/20 via-blue-600/20 to-indigo-600/20",
     icon: "cloud",
@@ -1299,6 +1302,12 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             </li>
           ))}
         </ul>
+
+        {project.notice && (
+          <div className="mb-4 rounded-lg border border-amber-400/30 bg-amber-400/10 px-3 py-2 text-xs text-amber-200">
+            {project.notice}
+          </div>
+        )}
 
         {/* Links */}
         <div className="flex flex-wrap gap-3 mt-auto pt-4 border-t border-foreground/5">
