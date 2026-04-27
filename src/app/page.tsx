@@ -182,7 +182,7 @@ const JUST_FOR_FUN_PROJECTS: Project[] = [
     stack: ["Next.js", "Node.js", "Render", "Vercel"],
     bullets: [
       "Quickly check DOTM license print details using license number",
-      "Helps save time instead of searching through thousands of PDF pages",
+      "Helps save time instead of searching through thousands of PDF pages..",
     ],
     notice:
       "Temporarily unavailable due to Render free usage limit. It will work from new month.",
