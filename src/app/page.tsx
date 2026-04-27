@@ -185,7 +185,7 @@ const JUST_FOR_FUN_PROJECTS: Project[] = [
       "Helps save time instead of searching through thousands of PDF pages",
     ],
     notice:
-      "Temporarily unavailable due to Render free usage limit. It will work from 1st May.",
+      "Temporarily unavailable due to Render free usage limit. It will work from new month.",
     live: "https://dotm-license-checker.vercel.app/",
     gradient: "from-cyan-600/20 via-blue-600/20 to-indigo-600/20",
     icon: "cloud",
